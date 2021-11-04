@@ -11,8 +11,9 @@ import {
   Image,
   ImageBackground
 } from 'react-native';
-import GwasaButton from '/CustomButton';
-import Header from '/Header';
+
+import Bonyeza from './CustomButton/GwaBonyeza';
+import Kichwa from './CustomHeader/Header';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -31,13 +32,13 @@ const App = () => {
     style = {styles.body}
     source = {{uri: 'https://cdn.pixabay.com/photo/2013/07/12/12/35/texture-145968_960_720.png'}}>
 
-<Header />
+<Kichwa />
 
 <Modal 
-visible={showWarning}
+visible={warning}
         transparent
         onRequestClose={() =>
-          SetshowWarning(false)
+          setWarning(false)
         }
         animationType='slide'
         hardwareAccelerated
@@ -45,38 +46,38 @@ visible={showWarning}
         <View style={styles.centered_view}>
           <View style={styles.warning_modal}>
             <View style={styles.warning_title}>
-              <Text style={styles.text}>WARNING!</Text>
+              <Text style={styles.text}>TAHADHARI!</Text>
             </View>
             <View style={styles.warning_body}>
-              <Text style={styles.text}>The name must be longer than 3 charachters</Text>
+              <Text style={styles.text}>Jina latakiwa kuwa na herufi zaidi ya 4</Text>
             </View>
             <Pressable
-              onPress={() => SetshowWarning(false)}
+              onPress={() => setWarning(false)}
               style={styles.warning_button}
               android_ripple={{ color: '#fff' }}
             >
-              <Text style={styles.text}>OK</Text>
+              <Text style={styles.text}>SAWA</Text>
             </Pressable>
           </View>
         </View>
       </Modal>
       <Text style={styles.text}>
-        Please write your name:
+        Tafadhali andika jina lako:
       </Text>
       <TextInput
         style={styles.input}
-        placeholder='e.g. John'
-        onChangeText={(value) => SetName(value)}
+        placeholder='mfano. Abdul'
+        onChangeText={(value) => setName(value)}
       />
-      <GwasaButton
+      <Bonyeza
       onPressFunction = {onPressHandler}
       title = {submitted ? 'Futa' : 'Kusanya'}
-      color = {'#00ff00'}
+      color = {'#4503fc'}
       />
-      <GwasaButton
+      <Bonyeza
       onPressFunction = {() => { }}
       title = {'Jaribu'}
-      color = {'#ff00ff'} 
+      color = {'#03fc66'} 
       style = {{margin: 10}}
       />
       {/* <Pressable
@@ -96,7 +97,7 @@ visible={showWarning}
         submitted ?
           <View style={styles.body}>
             <Text style={styles.text}>
-              You are registered as {name}
+              Umesajiliwa kama {name}
             </Text>
             <Image
               style={styles.image}
@@ -139,6 +140,8 @@ const styles = StyleSheet.create({
     width: 150,
     height: 50,
     alignItems: 'center',
+    color:'#03fc66',
+
   },
   centered_view: {
     flex: 1,

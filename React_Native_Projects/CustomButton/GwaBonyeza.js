@@ -5,18 +5,19 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const GwasaButton = (props) =>{
+const Bonyeza = (props) =>{
     return(
         <Pressable
         onPress = {props.onPressFunction}
         hitSlop = {{right: 20, left: 20, top: 20, botton: 20}}
-        android_ripple = {{color: '#00f'}}
-        style = {({pressed}) => [{backgroundColor: pressed ? '#dddddd' : 'props.color'}, styles.button, {...props.style}
+        android_ripple = {{color: '##fc0307'}}
+        style = {({pressed}) => [{backgroundColor: pressed ? '#dddddd' : props.color}, styles.button, {...props.style}
     ]}
     >
 
     <Text style = {styles.text}>
-        {props.title}
+      {props.title}
+      {}
     </Text>
 
         </Pressable>
@@ -38,4 +39,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default GwasaButton;
+export default Bonyeza;

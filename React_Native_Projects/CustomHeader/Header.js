@@ -5,14 +5,14 @@ import {
     View,
 } from 'react-native';
 
-const Header = (props) =>{
+const Kichwa = (props) =>{
     return(
         <View 
-        style = {styles.View}
+        style = {styles.view}
         >
             <Text style = {styles.text}
             >
-                React Native Application 
+                Kichwa cha Mafunzo ya React Native
             </Text>
         </View>
     )
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Header;
+export default Kichwa;
